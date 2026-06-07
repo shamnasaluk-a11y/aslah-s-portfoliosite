@@ -102,7 +102,6 @@ const frameCount = 240;
 const currentFrame = index => (
   `ezgif-frame-${index.toString().padStart(3, '0')}.png`
 );
-);
 
 const images = [];
 let animationReady = false;
