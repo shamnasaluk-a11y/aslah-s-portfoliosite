@@ -100,7 +100,8 @@ const heroContent = document.querySelector('.hero-content');
 
 const frameCount = 240;
 const currentFrame = index => (
-  `images/hero section/ezgif-2b9cd08694743ab5-png-split (1)/ezgif-frame-${index.toString().padStart(3, '0')}.png`
+  `ezgif-frame-${index.toString().padStart(3, '0')}.png`
+);
 );
 
 const images = [];
