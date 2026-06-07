@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslah's Kitchen | Fine Dining & Culinary Experience</title>
+    <meta name="description" content="Experience the finest culinary creations at Aslah's Kitchen. Elegant dining, exquisite flavors.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Aslah's Kitchen</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservations" class="btn-outline">Reservations</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-sticky">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="fade-in-up">A Symphony of Taste</h1>
+                <p class="fade-in-up delay-1">Indulge in an unforgettable fine dining experience where passion meets the plate.</p>
+                <a href="#reservations" class="btn fade-in-up delay-2">Book a Table</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-text slide-in-left">
+                <h2>Our Philosophy</h2>
+                <p>At Aslah's Kitchen, we believe that food is an art form. Every dish is meticulously crafted using locally sourced, seasonal ingredients to create flavors that linger in memory.</p>
+                <p>Our chefs combine traditional techniques with modern innovation to present a menu that is both familiar and extraordinary.</p>
+                <a href="#menu" class="btn-link">Explore Our Menu &rarr;</a>
+            </div>
+            <div class="about-image slide-in-right">
+                <img src="images/restaurant_interior.png" alt="Aslah's Kitchen Restaurant Interior" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title text-center fade-in-up">
+                <h2>Signature Dishes</h2>
+                <p>A glimpse into our culinary journey</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card fade-in-up">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Biriyani</h3>
+                            <span class="price">₹160</span>
+                        </div>
+                        <p>Aromatic basmati rice cooked with tender meat, infused with traditional spices and herbs.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-up delay-1">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Kuzhi Mandhi</h3>
+                            <span class="price">₹180</span>
+                        </div>
+                        <p>Traditional slow-cooked fragrant rice and tender meat, seasoned with authentic Arabian spices.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-up delay-2">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Fried Rice</h3>
+                            <span class="price">₹150</span>
+                        </div>
+                        <p>Wok-tossed rice with fresh vegetables, soy sauce, and your choice of chicken or egg.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-up">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Chilly Chicken</h3>
+                            <span class="price">₹130</span>
+                        </div>
+                        <p>Crispy marinated chicken wok-tossed in a spicy, tangy, and sweet chili sauce with bell peppers.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-up delay-1">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Butter Chicken</h3>
+                            <span class="price">₹130</span>
+                        </div>
+                        <p>Tender chicken tikka simmered in a rich, creamy, and mildly spiced tomato gravy.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-up delay-2">
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Alfahm</h3>
+                            <span class="price">₹120</span>
+                        </div>
+                        <p>Perfectly grilled chicken marinated with aromatic Arabian spices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <div class="container text-center fade-in-up">
+            <h2>Reserve Your Experience</h2>
+            <p>Join us for an evening of exquisite culinary delight.</p>
+            <form class="reservation-form" id="reservation-form">
+                <div class="form-group">
+                    <input type="text" id="res-name" placeholder="Name" required>
+                    <input type="email" id="res-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="res-date" required>
+                    <input type="time" id="res-time" required>
+                    <select id="res-size" required>
+                        <option value="" disabled selected>Party Size</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5+">5+ People</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Aslah's Kitchen</h3>
+                <p>Elevating the art of dining.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Culinary Blvd, Epicure City</p>
+                <p>Phone: 8848361738</p>
+                <p>Email: shamnasaluk@gmail.com</p>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon - Thu: 5:00 PM - 10:00 PM</p>
+                <p>Fri - Sat: 5:00 PM - 11:00 PM</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Aslah's Kitchen Fine Dining. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

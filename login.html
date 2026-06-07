@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Aslah's Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.9)), url('images/hero_bg.png') center/cover no-repeat;
+        }
+
+        .login-box {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 4rem;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .login-subtitle {
+            color: #9ca3af;
+            margin-bottom: 3rem;
+        }
+
+        .login-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .login-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .login-card h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .login-card p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="login-logo">Aslah's Kitchen</h1>
+            <p class="login-subtitle">Welcome back. Please select your portal.</p>
+
+            <div class="login-options">
+                <a href="index.html" class="login-card">
+                    <div class="icon">👤</div>
+                    <div>
+                        <h3>Customer Portal</h3>
+                        <p>Book tables and explore our menu</p>
+                    </div>
+                </a>
+
+                <a href="employee.html" class="login-card">
+                    <div class="icon">👨‍🍳</div>
+                    <div>
+                        <h3>Employee Portal</h3>
+                        <p>Manage reservations and operations</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

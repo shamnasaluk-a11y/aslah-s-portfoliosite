@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard | Aslah's Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1.5rem;
+        }
+        .dashboard-header h1 {
+            color: var(--accent-color);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .table-wrapper {
+            background: var(--surface-color);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        th {
+            background: rgba(0,0,0,0.2);
+            color: var(--accent-color);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+        .badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .empty-state {
+            padding: 4rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+        .logout-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="login.html" class="logo">Aslah's Kitchen</a>
+            <div class="nav-links">
+                <a href="login.html" class="logout-btn">Log Out</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Recent Bookings</h1>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Party Size</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-body">
+                    <!-- Data will be populated here by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingsBody = document.getElementById('bookings-body');
+            const reservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+            
+            if (reservations.length === 0) {
+                bookingsBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="empty-state">
+                            <p>No reservations found.</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            // Sort newest first
+            reservations.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            let html = '';
+            reservations.forEach(res => {
+                html += `
+                    <tr>
+                        <td>
+                            <strong>${res.date}</strong><br>
+                            <span style="color: #9ca3af; font-size: 0.9rem;">${res.time}</span>
+                        </td>
+                        <td>${res.name}</td>
+                        <td>${res.email}</td>
+                        <td>${res.size} Person(s)</td>
+                        <td><span class="badge">Confirmed</span></td>
+                    </tr>
+                `;
+            });
+            bookingsBody.innerHTML = html;
+        });
+    </script>
+</body>
+</html>
